@@ -1,0 +1,13 @@
+CREATE TABLE buy(
+  uid int(6) NOT NULL AUTO_INCREMENT,
+  weixinname char(100),
+  username char(100),
+  sex int(6),
+  age int(6),
+  product char(100) NOT NULL,
+  pnum int(100) NOT NULL,
+  gift char(100),
+  gnum int(100),
+  udate datetime,
+  PRIMARY KEY (uid)
+);
