@@ -18,4 +18,4 @@ class UserHandler(tornado.web.RequestHandler):
             else:
                 self.write("your password was not right.")
         else:
-            self.write("There is no thi user.")
+            self.write("There is no this user.")
