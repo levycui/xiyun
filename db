@@ -4,10 +4,40 @@ CREATE TABLE buy(
   username char(100),
   sex int(6),
   age int(6),
-  product char(100) NOT NULL,
-  pnum int(100) NOT NULL,
+  product char(100),
+  pnum int(100),
   gift char(100),
   gnum int(100),
   udate datetime,
   PRIMARY KEY (uid)
 );
+
+
+
+CREATE TABLE goods(
+  gid int(6) NOT NULL AUTO_INCREMENT,
+  gclass int(100), --分类
+  ggoodsname char(100), --货品名称
+  gproductuse char(100), --货品用途
+  gobject char(100), --使用人群
+  PRIMARY KEY (gid)
+);
+
+
+
+CREATE TABLE buyuser(
+  bid int(6) NOT NULL AUTO_INCREMENT,
+  bweixinname char(100), --微信号
+  busername char(100), --名字
+  bsex int(6), --性别
+  bage int(6), --年龄
+  bphone char(100), --手机
+  bbirthday datetime, --生日
+  baddress1 char(100), --收货地址1
+  baddress2 char(100), --收货地址2
+  baddress3 char(100), --收货地址3
+  bdate datetime, --录入时间
+  PRIMARY KEY (bid)
+);
+
+
