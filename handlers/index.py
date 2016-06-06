@@ -6,9 +6,10 @@ import methods.readdb as mrd
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        usernames = mrd.select_columns(table="user",column="username")
-        one_user = usernames[0][0]
-        self.render("index.html", user=one_user)
+        #usernames = mrd.select_columns(table="user",column="username")
+        #one_user = usernames[0][0]
+        #self.render("index.html", user=one_user)
+         self.render("index.html")
 
 
     # def post(self):

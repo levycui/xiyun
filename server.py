@@ -4,6 +4,7 @@
 import tornado.ioloop
 import tornado.options
 import tornado.httpserver
+import os.path
 
 from application import application
 
