@@ -9,12 +9,16 @@ import sys     #utf-8，兼容汉字
 reload(sys)
 sys.setdefaultencoding("utf-8")
 from handlers.index import IndexHandler
-from handlers.buy import NewHandler
+
 from handlers.order import OrderHandler
 from handlers.query import QueryHandler
 from handlers.buyer import BuyerHandler
 from handlers.goods import GoodsHandler
 from handlers.agent import AgentHandler
+
+from handlers.buy import NewHandler
+from handlers.goods import GoodsAddHandler
+from handlers.goods import GoodsAddNewHandler
 
 
 url = [
@@ -23,6 +27,9 @@ url = [
     (r'/query.html', QueryHandler),
     (r'/buyer.html', BuyerHandler),
     (r'/goods.html', GoodsHandler),
+    (r'/goodsadd.html', GoodsAddHandler),
     (r'/agent.html', AgentHandler),
     (r'/buy', NewHandler),
+    (r'/goodsAdd', GoodsAddNewHandler),
+
 ]
