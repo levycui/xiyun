@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>希芸</title></head>
+<body>
+<h1>新增货品</h1>
+
+<form method="POST" action="/goodsUpdateChange">
+    <p><a href="goods.html">返回货品管理</a></p>
+    {% for i in lines %}
+    <table>
+        <tr>
+
+            <td>
+                <p><span>货品编码:</span><input type="text" id="goodsnum" name="goodsnum" value="{{ i[1] }}"/></p>
+                <p><span>货品名称:</span><input type="text" id="goodsname" name="goodsname" value="{{ i[2] }}"/></p>
+            </td>
+            <td>
+                <p><span>进货价格:</span><input type="text" id="goodsprice" name="goodsprice" value="{{ i[3] }}"/></p>
+                <p><span>零售价格:</span><input type="text" id="goodssell" name="goodssell" value="{{ i[4] }}" /></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+
+                <p><input type="submit" value="提交" id="commit"/></p>
+            </td>
+        </tr>
+
+    </table>
+
+    {% end %}
+</form>
+</body>
+</html>

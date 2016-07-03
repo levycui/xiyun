@@ -18,6 +18,10 @@ from handlers.agent import AgentHandler
 
 from handlers.buy import NewHandler
 from handlers.goods import GoodsAddHandler
+from handlers.goodsupdate import GoodsUpdateHandler
+from handlers.goodsupdate import GoodsUpdateHtmlHandler
+from handlers.goodsupdate import GoodsUpdateChangeHandler
+from handlers.goodslist import GoodsListHandler
 from handlers.goods import GoodsAddNewHandler
 
 
@@ -28,6 +32,10 @@ url = [
     (r'/buyer.html', BuyerHandler),
     (r'/goods.html', GoodsHandler),
     (r'/goodsadd.html', GoodsAddHandler),
+    (r'/goodslist.html', GoodsListHandler),
+    (r'/goodsupdate.html', GoodsUpdateHtmlHandler),
+    (r'/goodsUpdate', GoodsUpdateHandler),
+    (r'/goodsUpdateChange', GoodsUpdateChangeHandler),
     (r'/agent.html', AgentHandler),
     (r'/buy', NewHandler),
     (r'/goodsAdd', GoodsAddNewHandler),

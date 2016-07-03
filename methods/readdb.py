@@ -15,3 +15,10 @@ def select_columns(table, column ):
     cur.execute(sql)
     lines = cur.fetchall()
     return lines
+
+def select_goodsupdate(table, column, condition, value ):
+    sql = "select " + column + " from " + table + " where " + condition + "='" + value + "'"
+    cur.execute(sql)
+    lines = cur.fetchall()
+
+    return lines
