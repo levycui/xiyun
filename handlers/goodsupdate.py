@@ -1,5 +1,6 @@
 #!/usr/bin/env Python
 # coding=utf-8
+import time
 import tornado.web
 import methods.readdb as mrd
 import methods.updatedb as updatemrd
@@ -51,7 +52,9 @@ class GoodsUpdateChangeHandler(tornado.web.RequestHandler):
         else:
             user_infos = updatemrd.goods_update_table(table="goods",goodsname=goodsname,goodsprice=goodsprice,goodssell=goodssell,goodsnum=goodsnum)
             if not user_infos:
+
                 self.write("数据修改成功！")
-                self.render("goodslist.html", blogs=user_infos)
+                self.render("goods.html", blogs=user_infos)
+
             else:
                 self.write("this is error.")

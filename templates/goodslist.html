@@ -2,18 +2,21 @@
 <html>
 <head><title>希芸</title></head>
 <body>
+<h1>货品列表</h1>
 <form method="POST" action="/goodsUpdate">
+    <p><a href="goods.html">返回</a></p>
     <p><span>货品修改(货品编号):</span><input type="text" style="width:50px" id="goodsnum" name="goodsnum"/>
         <input type="submit" value="修改" id="commit"/>
     </p>
-    {%block content%}
-    <ul>
-        {% for i in blogs %}
-        <p><span style="color: blue; ">【货品名称:{{ i[1] }} 】</span>【货品编号:{{ i[0] }}】 【进货价格：{{ i[2] }}】 【零售价格：{{ i[3] }}】
-        </p>
-        {% end %}
-    </ul>
-    {%end%}
+    {% block content %}
+
+    {% for i in blogs %}
+    <p><span style="color: blue; ">【货品名称:{{ i[1] }} 】</span>【货品编号:{{ i[0] }}】 【进货价格：{{ i[2] }}】 【零售价格：{{ i[3] }}】
+    </p>
+    {% end %}
+
+    {% end %}
+
 </form>
 </body>
 </html>
