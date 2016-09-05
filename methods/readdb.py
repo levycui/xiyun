@@ -22,3 +22,17 @@ def select_goodsupdate(table, column, condition, value ):
     lines = cur.fetchall()
 
     return lines
+
+def select_buyerupdate(table, column, condition, value ):
+    sql = "select " + column + " from " + table + " where " + condition + "='" + value + "'"
+    cur.execute(sql)
+    lines = cur.fetchall()
+
+    return lines
+
+def select_queryupdate(table, column, condition, value ):
+    sql = "select " + column + " from " + table + " where " + condition + "='" + value + "'"
+    cur.execute(sql)
+    lines = cur.fetchall()
+
+    return lines

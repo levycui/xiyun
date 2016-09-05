@@ -23,9 +23,11 @@ class NewHandler(tornado.web.RequestHandler):
         #     return None
         if not weixinname.strip():
             self.write('this is error."weixinname" is null!')
+            self.render("order.html")
         else:
             user_infos = mrd.insert_table(table="buy",weixinname=weixinname,username=username,sex=sex,age=age,product=product1,pnum=pnum1,gift=gift1,gnum=gnum1,udate=udate)
             if not user_infos:
+                self.write("添加成功！")
                 self.render("index.html")
             else:
                 self.write("this is error.")

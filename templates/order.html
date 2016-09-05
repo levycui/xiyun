@@ -3,11 +3,10 @@
 <head><title>希芸</title></head>
 <body>
 <h1>新单购买</h1>
-
 <form method="POST" action="/buy">
+    <p><a href="/">返回</a></p>
     <table>
         <tr>
-
             <td>
                 <p><span>微信号:</span><input type="text" id="weixinname" name="weixinname"/></p>
 
@@ -38,8 +37,8 @@
         </tr>
         <tr>
             <td>
-                <p><span>赠送物品1:</span><input type="text" id="gift1" name="gift1"/></p>
-                <p><span>赠送数量:</span><input type="text" id="gnum1" name="gnum1"/></p>
+                <p><span>赠送物品1:</span><input type="text" id="gift1" name="gift1" value="无"/></p>
+                <p><span>赠送数量:</span><input type="text" id="gnum1" name="gnum1" value="0"/></p>
             </td>
             <td>
                 <!--<p><span>赠送物品2:</span><input type="text" id="gift2" name="gift2"/></p>
@@ -49,7 +48,7 @@
         </tr>
         <tr>
             <td>
-                <p><span>购买日期:</span><input type="text" id="udate" name="udate"/></p>
+                <p><span>购买日期:</span><input type="text" id="udate" name="udate" value="{{ ordertime }}"/></p>
                 <p><input type="submit" value="提交" id="commit"/></p>
             </td>
         </tr>
