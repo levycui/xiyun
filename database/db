@@ -39,5 +39,3 @@ CREATE TABLE buyuser(
   bdate datetime, --录入时间
   PRIMARY KEY (bid)
 );
-
-
