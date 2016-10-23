@@ -4,7 +4,15 @@
 import tornado.web
 import methods.insertdb as mrd
 
-class NewHandler(tornado.web.RequestHandler):
+
+class BuyHandler(tornado.web.RequestHandler):
+    def get(self):
+        #usernames = mrd.select_columns(table="user",column="username")
+        #one_user = usernames[0][0]
+        #self.render("index.html", user=one_user)
+         self.render("order.html")
+
+class BuyNewHandler(tornado.web.RequestHandler):
     def post(self):
         weixinname = self.get_argument("weixinname")
         username = self.get_argument("username")
@@ -22,8 +30,10 @@ class NewHandler(tornado.web.RequestHandler):
         # if not weixinname:
         #     return None
         if not weixinname.strip():
+
             self.write('this is error."weixinname" is null!')
             self.render("order.html")
+
         else:
             user_infos = mrd.insert_table(table="buy",weixinname=weixinname,username=username,sex=sex,age=age,product=product1,pnum=pnum1,gift=gift1,gnum=gnum1,udate=udate)
             if not user_infos:

@@ -9,4 +9,4 @@ class BuyerHandler(tornado.web.RequestHandler):
         #usernames = mrd.select_columns(table="user",column="username")
         #one_user = usernames[0][0]
         #self.render("index.html", user=one_user)
-         self.render("buyer.html")
+        self.render("buyer.html")

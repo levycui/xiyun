@@ -3,7 +3,7 @@
 <head><title>希芸</title></head>
 <body>
 <h1>新单购买</h1>
-<form method="POST" action="/buy">
+<form method="POST" action="/orderadd">
     <p><a href="/">返回</a></p>
     <table>
         <tr>
@@ -14,41 +14,135 @@
             </td>
             <td>
 
-                <p><span>性别:</span>
-                    <select name="sex" id="sex">
-                        <option value="0">女</option>
-                        <option value="1">男</option>
-                    </select>
+                <p><span>购买角色:</span><select name="sex" id="sex">
+                    <option value="0">零售</option>
+                    <option value="1">特约</option>
+                    <option value="2">二级代理</option>
+                    <option value="3">一级代理</option>
+                    <option value="4">总代</option>
+                    <option value="5">战略</option>
+                </select>
                 </p>
-                <p><span>年龄:</span><input type="text" id="age" name="age"/></p>
+                <p><span>购买日期:</span><input type="text" style="width:80px" id="udate" name="udate"/>（格式：1986-11-22）</p>
+                <!--<p><span>年龄:</span><input type="text" id="age" name="age"/></p>-->
             </td>
         </tr>
         <tr>
             <td>
-                <p><span>购买物品1:</span><input type="text" id="product1" name="product1"/></p>
-                <p><span>购买数量:</span><input type="text" id="pnum1" name="pnum1"/></p>
+                <p><span>购买物品1:</span><input type="text" id="product1" name="product1" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum1" name="pnum1" value="0"/></p>
             </td>
 
             <td>
-                <!--<p><span>购买物品2:</span><input type="text" id="product2" name="product2"/></p>
-                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum2"/></p>-->
+                <p><span>购买物品2:</span><input type="text" id="product2" name="product2" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum2" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品3:</span><input type="text" id="product2" name="product3" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum3" value="0"/></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><span>购买物品4:</span><input type="text" id="product1" name="product4" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum1" name="pnum4" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品5:</span><input type="text" id="product2" name="product5" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum5" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品6:</span><input type="text" id="product2" name="product6" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum6" value="0"/></p>
             </td>
 
         </tr>
         <tr>
             <td>
+                <p><span>购买物品7:</span><input type="text" id="product1" name="product7" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum1" name="pnum7" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品8:</span><input type="text" id="product2" name="product8" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum8" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品9:</span><input type="text" id="product2" name="product9" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum9" value="0"/></p>
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>
+                <p><span>购买物品10:</span><input type="text" id="product1" name="product10" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum1" name="pnum10" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品11:</span><input type="text" id="product2" name="product11" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum11" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品12:</span><input type="text" id="product2" name="product12" value="无"/></p>
+                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum12" value="0"/></p>
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>
+                </br>
+                </br>
+                ---赠品---
                 <p><span>赠送物品1:</span><input type="text" id="gift1" name="gift1" value="无"/></p>
                 <p><span>赠送数量:</span><input type="text" id="gnum1" name="gnum1" value="0"/></p>
             </td>
             <td>
-                <!--<p><span>赠送物品2:</span><input type="text" id="gift2" name="gift2"/></p>
-                <p><span>赠送数量:</span><input type="text" id="gnum2" name="gnum2"/></p>-->
+                </br>
+                </br>
+                </br>
+                <p><span>赠送物品2:</span><input type="text" id="gift2" name="gift2" value="无"/></p>
+                <p><span>赠送数量:</span><input type="text" id="gnum2" name="gnum2" value="0"/></p>
+            </td>
+
+            <td>
+                                </br>
+                </br>
+                </br>
+                <p><span>赠送物品3:</span><input type="text" id="gift2" name="gift3" value="无"/></p>
+                <p><span>赠送数量:</span><input type="text" id="gnum2" name="gnum3" value="0"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>赠送物品4:</span><input type="text" id="gift1" name="gift4" value="无"/></p>
+                <p><span>赠送数量:</span><input type="text" id="gnum1" name="gnum4" value="0"/></p>
+            </td>
+            <td>
+                <p><span>赠送物品5:</span><input type="text" id="gift2" name="gift5" value="无"/></p>
+                <p><span>赠送数量:</span><input type="text" id="gnum2" name="gnum5" value="0"/></p>
+            </td>
+
+            <td>
+                <p><span>赠送物品6:</span><input type="text" id="gift2" name="gift6" value="无"/></p>
+                <p><span>赠送数量:</span><input type="text" id="gnum2" name="gnum6" value="0"/></p>
             </td>
 
         </tr>
         <tr>
             <td>
-                <p><span>购买日期:</span><input type="text" id="udate" name="udate" value="{{ ordertime }}"/></p>
+                <!--<p><span>购买日期:</span><input type="text" id="udate" name="udate" value=" ordertime "/></p>-->
+
                 <p><input type="submit" value="提交" id="commit"/></p>
             </td>
         </tr>

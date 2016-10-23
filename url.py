@@ -10,13 +10,13 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 from handlers.index import IndexHandler
 
-from handlers.order import OrderHandler
 from handlers.query import QueryHandler
 from handlers.buyer import BuyerHandler
 from handlers.goods import GoodsHandler
 from handlers.agent import AgentHandler
 
-from handlers.buy import NewHandler
+from handlers.order import OrderNewHandler
+from handlers.order import OrderHandler
 from handlers.goods import GoodsAddHandler
 from handlers.goodsupdate import GoodsUpdateHandler
 from handlers.goodsupdate import GoodsUpdateHtmlHandler
@@ -41,13 +41,15 @@ url = [
     (r'/', IndexHandler),
     (r'/order.html', OrderHandler),
     (r'/query.html', QueryHandler),
-    (r'/buyer.html', BuyerHandler),
+
     (r'/goods.html', GoodsHandler),
+    (r'/goodsAdd', GoodsAddNewHandler),
     (r'/goodsadd.html', GoodsAddHandler),
     (r'/goodslist.html', GoodsListHandler),
     (r'/goodsupdate.html', GoodsUpdateHtmlHandler),
     (r'/goodsUpdate', GoodsUpdateHandler),
     (r'/goodsUpdateChange', GoodsUpdateChangeHandler),
+    (r'/buyer.html', BuyerHandler),
     (r'/buyeradd.html', BuyerAddHandler),
     (r'/buyerAdd', BuyerAddNewHandler),
     (r'/buyerlist.html', BuyerListHandler),
@@ -55,8 +57,8 @@ url = [
     (r'/buyerUpdate', BuyerUpdateHandler),
     (r'/buyerUpdateChange', BuyerUpdateChangeHandler),
     (r'/agent.html', AgentHandler),
-    (r'/buy', NewHandler),
-    (r'/goodsAdd', GoodsAddNewHandler),
+    (r'/order.html', OrderHandler),
+    (r'/orderadd', OrderNewHandler),
     (r'/querylist.html', QueryListHandler),
     (r'/queryupdate.html', QueryUpdateHtmlHandler),
     (r'/queryupdate', QueryUpdateHandler),

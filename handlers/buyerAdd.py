@@ -34,6 +34,7 @@ class BuyerAddNewHandler(tornado.web.RequestHandler):
         #     return None
         if not weixinname.strip() or not phonenum.strip() :
             self.write('this is error."微信号\手机号" 不能是空!')
+            self.render("buyeradd.html")
         else:
             bdate = time.strftime('%Y-%m-%d',time.localtime(time.time()))
             user_infos = mrd.buyer_insert_table(table="buyuser",weixinname=weixinname,phonenum=phonenum,sex=sex,age=age,username=username,address1=address1,birsday=birsday,address2=address2,bdate=bdate)

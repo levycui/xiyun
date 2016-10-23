@@ -29,6 +29,7 @@ class GoodsAddNewHandler(tornado.web.RequestHandler):
         #     return None
         if not goodsnum.strip() or not goodsname.strip() or not goodsprice.strip() or not goodssell.strip() :
             self.write('this is error."货品编码\货品名称\进货价格\零售价格" 不能是空!')
+            self.render("goodsadd.html")
         else:
             user_infos = mrd.goods_insert_table(table="goods",goodsnum=goodsnum,goodsname=goodsname,goodsprice=goodsprice,goodssell=goodssell)
             if not user_infos:
