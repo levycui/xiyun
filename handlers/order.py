@@ -3,17 +3,28 @@
 
 import tornado.web
 import time
+from methods.db import *
 
 import methods.insertdb as mrd
 
 class OrderHandler(tornado.web.RequestHandler):
+    def showAllBlog(self):
+        cur.execute('select gnum,ggoodsname from goods')
+        tmp = cur.fetchall()
+        return tmp[::-1]
+
     def get(self):
-        #usernames = mrd.select_columns(table="user",column="username")
-        #one_user = usernames[0][0]
-        #self.render("index.html", user=one_user)
-        # ordertime1 = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        # self.render("order.html" ,ordertime=ordertime1)
-        self.render("order.html")
+        name = self.get_cookie('hackerName')
+        blogs = self.showAllBlog()
+        self.render('order.html', cookieName=name, blogs=blogs)
+
+    # def get(self):
+    #     #usernames = mrd.select_columns(table="user",column="username")
+    #     #one_user = usernames[0][0]
+    #     #self.render("index.html", user=one_user)
+    #     # ordertime1 = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    #     # self.render("order.html" ,ordertime=ordertime1)
+    #     self.render("order.html")
 
 class OrderNewHandler(tornado.web.RequestHandler):
     def post(self):

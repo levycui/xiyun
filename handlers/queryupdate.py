@@ -2,8 +2,10 @@
 # coding=utf-8
 import time
 import tornado.web
+from methods.db import *
 import methods.readdb as mrd
 import methods.updatedb as updatemrd
+
 
 import sys
 reload(sys)
@@ -14,11 +16,16 @@ class QueryUpdateHtmlHandler(tornado.web.RequestHandler):
         #usernames = mrd.select_columns(table="user",column="username")
         #one_user = usernames[0][0]
         #self.render("index.html", user=one_user)
-         self.render("queryupdate.html")
+        self.render("queryupdate.html")
 
 
 
 class QueryUpdateHandler(tornado.web.RequestHandler):
+    def showAllBlog(self):
+        cur.execute('select gnum,ggoodsname from goods')
+        tmp = cur.fetchall()
+        return tmp[::-1]
+
     def post(self):
         orderid = self.get_argument("orderid")
         # goodsname = self.get_argument("goodsname")
@@ -26,12 +33,35 @@ class QueryUpdateHandler(tornado.web.RequestHandler):
         # goodssell = self.get_argument("goodssell")
         # if not weixinname:
         #     return None
+        name = self.get_cookie('hackerName')
+        blogs = self.showAllBlog()
+
+
+
+
 
         if not orderid.strip():
             self.write('this is error."订单编码" 不能是空!')
         else:
+
             user_infos = mrd.select_queryupdate(table="buy",column="*",condition="uid",value=orderid)
-            self.render("queryupdate.html" ,lines=user_infos)
+            # for b in blogs:
+            #     for bp in user_infos:
+            #         if b[0] == bp[4]:
+            #             bvalue = b[1]
+            bvalue =[]
+            for n in 4,12,13,14,15,16,17,18,19,20,21,22:
+                for bp in user_infos:
+                    for b in blogs:
+                        if bp[n] == b[0] :
+                            bvalue.append(b[1])
+            if len(bvalue) != 12:
+                num = 12 - len(bvalue)
+                for c in range(num):
+                    bvalue.append("无")
+
+
+            self.render("queryupdate.html" ,cookieName=name, blogs=blogs,lines=user_infos,bvalue=bvalue)
             # if not user_infos:
             #     # self.write("数据添加成功！")
             #     self.render("goodsupdate.html")

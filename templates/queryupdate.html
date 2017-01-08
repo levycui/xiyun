@@ -5,54 +5,199 @@
 <h1>订单信息修改</h1>
 
 <form method="POST" action="/queryUpdateChange">
-    <p><a href="/">返回</a></p>
-        {% for i in lines %}
+    <p><a href="/">返回</a> 注：购买角色 0代表零售，1代表特约，2代表二级代理，3代表一级代理，4代表总代</p>
+    {% for i in lines %}
     <table>
-                <tr>
-            <td>
-                  <p><span>订单编号:</span><input type="text" id="orderid" name="orderid" readOnly="true" value="{{ i[0] }}"/></p>
-
-                    </td>
-        </tr>
         <tr>
             <td>
-                <p><span>微信号:</span><input type="text" id="weixinname" name="weixinname" value="{{ i[1] }}"/></p>
-
-                <p><span>姓名:</span><input type="text" id="username" name="username" value="{{ i[2] }}"/></p>
-            </td>
-            <td>
-
-                <p><span>性别:</span><input type="text" id="sex" name="sex" value="{{ i[3] }}"/>
+                <p><span>订单编号:</span><input type="text" id="orderid" name="orderid" readOnly="true" value="{{ i[0] }}"/>
                 </p>
-                <p><span>年龄:</span><input type="text" id="age" name="age" value="{{ i[4] }}"/></p>
+
             </td>
         </tr>
         <tr>
             <td>
-                <p><span>购买物品1:</span><input type="text" id="product1" name="product1" value="{{ i[5] }}"/></p>
-                <p><span>购买数量:</span><input type="text" id="pnum1" name="pnum1" value="{{ i[6] }}"/></p>
+                <p><span>微信号:</span>
+                    <input type="text" id="weixinname" name="weixinname" value="{{ i[1] }}"/></p>
+
+                <p><span>姓名:</span>
+                    <input type="text" id="username" name="username" value="{{ i[2] }}"/></p>
+
+            </td>
+            <td>
+                <p><span>购买角色:</span>
+                    <input type="text" id="sex" name="sex" value="{{ i[3] }}"/>
+                </p>
+
+                <p></br>
+                </p>
+                {#                <p><span>年龄:</span><input type="text" id="age" name="age" value="{{ i[4] }}"/></p>#}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><span>购买物品1:</span>
+
+                    <input type="text" id="product1" name="product1" value="{{ bvalue[0] }}"/>
+
+                    {#                    <select id="product1" name="product1" style="width:200px">#}
+                    {#                        <option value="未更新">未更新</option>#}
+                    {##}
+                    {#                        <option value={{ b[0] }} selected="selected">{{ b[1] }}</option>#}
+                    {##}
+                    {#                    </select>#}
+                </p>
+
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum1" name="pnum1" value="{{ i[5] }}" style="width:50px"/></p>
             </td>
 
             <td>
-                <!--<p><span>购买物品2:</span><input type="text" id="product2" name="product2"/></p>
-                <p><span>购买数量:</span><input type="text" id="pnum2" name="pnum2"/></p>-->
+                <p><span>购买物品2:</span>
+                    <input type="text" id="product2" name="product2" value="{{ bvalue[1] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum2" name="pnum2" value="{{ i[33] }}" style="width:50px"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>购买物品3:</span>
+                    <input type="text" id="product3" name="product3" value="{{ bvalue[2] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum3" name="pnum3" value="{{ i[23] }}" style="width:50px"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品4:</span>
+                    <input type="text" id="product4" name="product4" value="{{ bvalue[3] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum4" name="pnum4" value="{{ i[24] }}" style="width:50px"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>购买物品5:</span>
+                    <input type="text" id="product5" name="product5" value="{{ bvalue[4] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum5" name="pnum5" value="{{ i[25] }}" style="width:50px"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品6:</span>
+                    <input type="text" id="product6" name="product6" value="{{ bvalue[5] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum6" name="pnum6" value="{{ i[26] }}" style="width:50px"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>购买物品7:</span>
+                    <input type="text" id="product7" name="product7" value="{{ bvalue[6] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum7" name="pnum7" value="{{ i[27] }}" style="width:50px"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品8:</span>
+                    <input type="text" id="product8" name="product8" value="{{ bvalue[7] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum8" name="pnum8" value="{{ i[28] }}" style="width:50px"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>购买物品9:</span>
+                    <input type="text" id="product9" name="product9" value="{{ bvalue[8] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum9" name="pnum9" value="{{ i[29] }}" style="width:50px"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品10:</span>
+                    <input type="text" id="product10" name="product10" value="{{ bvalue[9] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum10" name="pnum10" value="{{ i[30] }}" style="width:50px"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>购买物品11:</span>
+                    <input type="text" id="product11" name="product11" value="{{ bvalue[10] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum11" name="pnum11" value="{{ i[31] }}" style="width:50px"/></p>
+            </td>
+
+            <td>
+                <p><span>购买物品12:</span>
+                    <input type="text" id="product12" name="product12" value="{{ bvalue[11] }}"/></p>
+                <p><span>购买数量:</span>
+                    <input type="text" id="pnum12" name="pnum12" value="{{ i[32] }}" style="width:50px"/></p>
             </td>
 
         </tr>
         <tr>
             <td>
-                <p><span>赠送物品1:</span><input type="text" id="gift1" name="gift1" value="{{ i[7] }}"/></p>
-                <p><span>赠送数量:</span><input type="text" id="gnum1" name="gnum1"  value="{{ i[8] }}"/></p>
+                </br>
+                </br>
+                ---赠品---
+                <p><span>赠送物品1:</span>
+                    <input type="text" id="gift1" name="gift1" value="{{ i[6] }}"/></p>
+                <p><span>赠送数量:</span>
+                    <input type="text" id="gnum1" name="gnum1" value="{{ i[7] }}" style="width:50px"/></p>
             </td>
             <td>
-                <!--<p><span>赠送物品2:</span><input type="text" id="gift2" name="gift2"/></p>
-                <p><span>赠送数量:</span><input type="text" id="gnum2" name="gnum2"/></p>-->
+                <p><span>赠送物品2:
+                </span><input type="text" id="gift2" name="gift2" value="{{ i[34] }}"/></p>
+                <p><span>赠送数量:
+                </span><input type="text" id="gnum2" name="gnum2" value="{{ i[39] }}" style="width:50px"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>赠送物品3:</span>
+                    <input type="text" id="gift3" name="gift3" value="{{ i[35] }}"/></p>
+                <p><span>赠送数量:</span>
+                    <input type="text" id="gnum3" name="gnum3" value="{{ i[40] }}" style="width:50px"/></p>
+            </td>
+            <td>
+                <p><span>赠送物品4:
+                </span><input type="text" id="gift4" name="gift4" value="{{ i[36] }}"/></p>
+                <p><span>赠送数量:
+                </span><input type="text" id="gnum4" name="gnum4" value="{{ i[41] }}" style="width:50px"/></p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <p><span>赠送物品5:</span>
+                    <input type="text" id="gift5" name="gift5" value="{{ i[37] }}"/></p>
+                <p><span>赠送数量:</span>
+                    <input type="text" id="gnum5" name="gnum5" value="{{ i[42] }}" style="width:50px"/></p>
+            </td>
+            <td>
+                <p><span>赠送物品6:
+                </span><input type="text" id="gift6" name="gift6" value="{{ i[38] }}"/></p>
+                <p><span>赠送数量:
+                </span><input type="text" id="gnum6" name="gnum6" value="{{ i[43] }}" style="width:50px"/></p>
             </td>
 
         </tr>
         <tr>
             <td>
-                <p><span>购买日期:</span><input type="text" id="udate" name="udate" value="{{ i[9] }}"/></p>
+                <p><span>购买日期:</span><input type="text" id="udate" name="udate" value="{{ i[8] }}"/></p>
                 <p><input type="submit" value="提交" id="commit"/></p>
             </td>
         </tr>
